@@ -8,10 +8,10 @@ namespace API_Colectivos.Domain.Models
 	{
 		public int Id { get; set; }
 		[Required]
-		[Column(TypeName = "varchar(20)")]
+		[Column(TypeName = "varchar(30)")]
 		public string NameUser { get; set; } = string.Empty;
 		[Required]
-		[Column(TypeName = "varchar(30)")]
+		[Column(TypeName = "varchar(100)")]
 		public string Password { get; set; } = string.Empty;
 	}
 }

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_Colectivos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220618041437_Migrate")]
-    partial class Migrate
+    [Migration("20220618060711_Inicio")]
+    partial class Inicio
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -177,11 +177,11 @@ namespace API_Colectivos.Migrations
 
                     b.Property<string>("NameUser")
                         .IsRequired()
-                        .HasColumnType("varchar(20)");
+                        .HasColumnType("varchar(30)");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("varchar(30)");
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
 

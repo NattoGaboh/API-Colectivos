@@ -175,11 +175,11 @@ namespace API_Colectivos.Migrations
 
                     b.Property<string>("NameUser")
                         .IsRequired()
-                        .HasColumnType("varchar(20)");
+                        .HasColumnType("varchar(30)");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("varchar(30)");
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
 

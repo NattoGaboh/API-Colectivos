@@ -1,13 +1,23 @@
-﻿using API_Colectivos.Persistence.Context;
-using Microsoft.EntityFrameworkCore;
+﻿global using Microsoft.EntityFrameworkCore;
+using API_Colectivos.Domain.IRepository;
+using API_Colectivos.Domain.IServices;
+using API_Colectivos.Persistence.Context;
+using API_Colectivos.Persistence.Repository;
+using API_Colectivos.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+// Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("Conexion");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
-// Add services to the container.
+//Services
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ILoginService, LoginService>();
+//Repositories
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ILoginRepository, LoginRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

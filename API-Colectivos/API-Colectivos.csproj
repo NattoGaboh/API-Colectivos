@@ -28,6 +28,11 @@
     <None Remove="Pomelo.EntityFrameworkCore.MySql" />
     <None Remove="Controllers\" />
     <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
+    <None Remove="Persistence\Repository\" />
+    <None Remove="Services\" />
+    <None Remove="Domain\IRepository\" />
+    <None Remove="Domain\IServices\" />
+    <None Remove="Utils\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Persistence\" />
@@ -35,5 +40,10 @@
     <Folder Include="Domain\" />
     <Folder Include="Domain\Models\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Persistence\Repository\" />
+    <Folder Include="Services\" />
+    <Folder Include="Domain\IRepository\" />
+    <Folder Include="Domain\IServices\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
 </Project>
