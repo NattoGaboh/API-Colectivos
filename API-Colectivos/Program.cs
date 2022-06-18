@@ -1,5 +1,12 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using API_Colectivos.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 
+var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("Conexion");
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+});
 // Add services to the container.
 
 builder.Services.AddControllers();
